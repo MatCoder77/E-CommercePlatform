@@ -1,4 +1,4 @@
-package ETrade;
+package e_commerce_platform_client;
 
 import java.io.IOException;
 
@@ -79,6 +79,7 @@ public class WelcomeWindowController {
 		
 		try {
 			Scene scene = new Scene((Pane) loader.load());
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			stage.setFullScreen(true);
 			stage.setScene(scene);
 		} catch (IOException e) {

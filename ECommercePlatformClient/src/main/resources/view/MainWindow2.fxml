@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="e_commerce_platform_client.MainWindowController">
+   <children>
+      <GridPane layoutX="86.0" layoutY="133.0" prefHeight="800.0" prefWidth="1500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="744.0" minWidth="10.0" prefWidth="350.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="1196.0" minWidth="10.0" prefWidth="1148.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="393.0" minHeight="10.0" prefHeight="76.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="781.0" minHeight="10.0" prefHeight="724.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <AnchorPane style="-fx-background-color: #1a237e;">
+               <children>
+                  <MaterialDesignIconView fill="WHITE" glyphName="FORMAT_CLEAR" layoutX="18.0" layoutY="36.0" size="40" wrappingWidth="40.0" />
+                  <MaterialDesignIconView fill="WHITE" glyphName="FORMAT_CLEAR" layoutX="44.0" layoutY="54.0" rotate="180.0" size="40" />
+                  <Label layoutX="104.0" layoutY="14.0" prefHeight="12.0" prefWidth="127.0" text="MatCoder" textFill="WHITE">
+                     <font>
+                        <Font name="Montserrat Medium Italic" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="151.0" layoutY="44.0" prefHeight="14.0" prefWidth="145.0" text="Trade Platform" textFill="WHITE">
+                     <font>
+                        <Font name="Montserrat Medium Italic" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <GridPane style="-fx-background-color: #1a237e;" GridPane.columnIndex="1">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <FontAwesomeIconView glyphName="SEARCH" size="35" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                  <MaterialDesignIconView glyphName="SETTINGS" size="35" text="" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                  <MaterialDesignIconView glyphName="CART" size="35" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                  <MaterialDesignIconView glyphName="HELP_CIRCLE" size="35" GridPane.columnIndex="8" GridPane.rowIndex="2" />
+                  <FontAwesomeIconView glyphName="CLOSE" size="35" GridPane.columnIndex="10" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <JFXButton fx:id="closeButton" maxWidth="1.7976931348623157E308" onAction="#closeButtonClicked" GridPane.columnIndex="10" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <AnchorPane style="-fx-background-color: #3954AD;" GridPane.rowIndex="1">
+               <children>
+                  <StackPane fx:id="stackPane" prefHeight="724.0" prefWidth="351.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <JFXDrawer fx:id="subcategoryDrower" defaultDrawerSize="290.0" direction="RIGHT" onDrawerClosed="#onDrawerClosed" onDrawerOpened="#onDrawerOpended" onDrawerOpening="#onDrawerOpening" prefHeight="449.0" prefWidth="91.0" />
+                        <GridPane fx:id="menu" maxWidth="1.7976931348623157E308">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="45.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                           </columnConstraints>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <children>
+                              <JFXButton fx:id="electronicButton11" alignment="BASELINE_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#buttonClicked" text="Electronic" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Montserrat Regular" size="22.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton alignment="BASELINE_LEFT" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="263.0" text="Motorisation" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Montserrat Regular" size="22.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </JFXButton>
+                              <JFXButton alignment="BASELINE_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Culture &amp; Entertainment" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="Montserrat Regular" size="21.25" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton alignment="BASELINE_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="House &amp; Garden" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font name="Montserrat Regular" size="22.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton alignment="BASELINE_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Health &amp; Beauty" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font name="Montserrat Regular" size="22.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton alignment="BASELINE_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Fashion" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Montserrat Regular" size="22.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton alignment="BASELINE_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Sport &amp; Hobby" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                 <font>
+                                    <Font name="Montserrat Regular" size="22.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton alignment="BASELINE_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Job &amp; Services" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                 <font>
+                                    <Font name="Montserrat Regular" size="22.0" />
+                                 </font>
+                              </JFXButton>
+                              <MaterialDesignIconView fill="WHITE" glyphName="CAR" size="35" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                              <MaterialDesignIconView fx:id="electronicIcon" fill="WHITE" glyphName="LAPTOP" size="35" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                              <MaterialDesignIconView fill="WHITE" glyphName="FILM" size="35" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                              <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="35" text="" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                              <MaterialDesignIconView fill="WHITE" glyphName="FOOTBALL" size="35" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                              <FontAwesomeIconView fill="WHITE" glyphName="BRIEFCASE" size="35" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+                              <FontAwesomeIconView fill="WHITE" glyphName="HEARTBEAT" size="35" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                              <MaterialDesignIconView fill="WHITE" glyphName="STAR" size="35" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                              <JFXButton alignment="BASELINE_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Home" textFill="WHITE" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="Montserrat SemiBold" size="24.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </JFXButton>
+                              <MaterialDesignIconView fill="WHITE" glyphName="HOME" size="35" GridPane.halignment="CENTER" />
+                           </children>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <padding>
+                              <Insets bottom="230.0" left="10.0" top="15.0" />
+                           </padding>
+                        </GridPane>
+                     </children>
+                  </StackPane>
+               </children>
+            </AnchorPane>
+            <GridPane fx:id="mainPane" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="377.0" minWidth="10.0" prefWidth="280.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="701.0" minWidth="10.0" prefWidth="580.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="289.0" minWidth="10.0" prefWidth="289.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="237.0" minHeight="10.0" prefHeight="73.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="624.0" minHeight="10.0" prefHeight="621.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="37.0" prefWidth="280.0" text="Motorisation" GridPane.halignment="CENTER">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <GridPane maxWidth="295.0" prefHeight="295.0" GridPane.rowIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="530.0" minHeight="10.0" prefHeight="530.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="290.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

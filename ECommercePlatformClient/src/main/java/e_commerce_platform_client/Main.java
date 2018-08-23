@@ -1,4 +1,4 @@
-package ETrade;
+package e_commerce_platform_client;
 	
 import javafx.application.Application;
 import javafx.stage.Stage;
