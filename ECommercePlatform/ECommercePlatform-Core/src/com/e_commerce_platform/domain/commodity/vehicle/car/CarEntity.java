@@ -19,9 +19,6 @@ public class CarEntity extends VehicleEntity{
 		MANUAL;
 	}
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
 	
 	private byte seatsNumber;
 	@ManyToOne

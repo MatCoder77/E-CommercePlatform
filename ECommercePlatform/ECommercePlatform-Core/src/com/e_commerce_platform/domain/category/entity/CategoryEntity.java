@@ -2,6 +2,7 @@ package com.e_commerce_platform.domain.category.entity;
 
 import java.util.Set;
 import java.util.Collections;
+import java.util.Optional;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
 
 @Entity
 public class CategoryEntity {
@@ -24,7 +26,8 @@ public class CategoryEntity {
 	
 	CategoryEntity() {}
 	
-	private CategoryEntity(CategoryBuilder builder) {
+	private CategoryEntity(CategoryEntityBuilder builder) {
+		id = builder.id;
 		name = builder.name;
 		parentCategory = builder.parentCategory;
 		subcategories = builder.subcategories;
@@ -39,38 +42,48 @@ public class CategoryEntity {
 		return parentCategory == null;
 	}
 	
-	int getId() {
+	public int getId() {
 		return id;
 	}
 	
-	String getName() {
+	public String getName() {
 		return name;
 	}
 	
-	public CategoryEntity getParentCategory() {
-		return parentCategory;
+	public Optional<CategoryEntity> getParentCategory() {
+		return Optional.ofNullable(parentCategory);
 	}
 	
-	public Set<CategoryEntity> getSubCategories() {
+	public Set<CategoryEntity> getSubcategories() {
 		return Collections.unmodifiableSet(subcategories);
 	}
 	
-	public static class CategoryBuilder {
+	public static CategoryEntityBuilder builder() {
+		return new CategoryEntityBuilder();
+	}
+	
+	public static class CategoryEntityBuilder {
+		private int id;
 		private String name;
 		private CategoryEntity parentCategory;
 		private Set<CategoryEntity> subcategories;
 		
-		public CategoryBuilder withName(String name) {
+		public CategoryEntityBuilder withId(int id) {
+			this.id = id;
+			return this;
+		}
+		
+		public CategoryEntityBuilder withName(String name) {
 			this.name = name;
 			return this;
 		}
 		
-		public CategoryBuilder withParent(CategoryEntity parent) {
+		public CategoryEntityBuilder withParent(CategoryEntity parent) {
 			this.parentCategory = parent;
 			return this;
 		}
 		
-		public CategoryBuilder withSubcategories(Set<CategoryEntity> subcategories) {
+		public CategoryEntityBuilder withSubcategories(Set<CategoryEntity> subcategories) {
 			this.subcategories = subcategories;
 			return this;
 		}

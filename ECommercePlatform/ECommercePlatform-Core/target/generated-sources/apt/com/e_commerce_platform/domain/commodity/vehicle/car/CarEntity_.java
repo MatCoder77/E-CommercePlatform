@@ -15,7 +15,6 @@ public abstract class CarEntity_ extends com.e_commerce_platform.domain.commodit
 	public static volatile SingularAttribute<CarEntity, Transmission> transmission;
 	public static volatile SingularAttribute<CarEntity, FuelTypeEntity> fuelType;
 	public static volatile SingularAttribute<CarEntity, DriveType> driveType;
-	public static volatile SingularAttribute<CarEntity, Long> id;
 	public static volatile SetAttribute<CarEntity, CarEquipmentEntity> seftyCarEquipmentType;
 	public static volatile SingularAttribute<CarEntity, CarModel> carModel;
 
@@ -24,7 +23,6 @@ public abstract class CarEntity_ extends com.e_commerce_platform.domain.commodit
 	public static final String TRANSMISSION = "transmission";
 	public static final String FUEL_TYPE = "fuelType";
 	public static final String DRIVE_TYPE = "driveType";
-	public static final String ID = "id";
 	public static final String SEFTY_CAR_EQUIPMENT_TYPE = "seftyCarEquipmentType";
 	public static final String CAR_MODEL = "carModel";
 
