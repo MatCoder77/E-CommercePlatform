@@ -1,4 +1,4 @@
-package e_commerce_platform_client;
+package ecommerceplatform.console;
 
 import java.io.IOException;
 import java.net.URL;
@@ -47,7 +47,9 @@ public class MainWindowController implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		try {
-			GridPane content = FXMLLoader.load(getClass().getResource("/SubcategoryPane.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/SubcategoryPane.fxml"));
+			loader.setController(new SubcategoryPaneController(this));
+			GridPane content = loader.load();//FXMLLoader.load(getClass().getResource("/SubcategoryPane.fxml"));
 			subcategoryDrower.setSidePane(content);
 			//subcategoryDrower.getSidePane().get(0).toFront();
 		} catch (IOException e) {
@@ -84,6 +86,9 @@ public class MainWindowController implements Initializable{
     void onDrawerOpening(Event event) {
     	Platform.runLater(() -> FXCollections.reverse(stackPane.getChildren()));
     }
-
+    
+    void hideSubcategoryPane() {
+    	subcategoryDrower.close();
+    }
 
 }

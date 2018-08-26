@@ -1,4 +1,4 @@
-package e_commerce_platform_client;
+package ecommerceplatform.console;
 	
 import javafx.application.Application;
 import javafx.stage.Stage;

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
@@ -53,10 +55,17 @@
             <Font name="Montserrat Regular" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton alignment="BASELINE_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Back" textFill="WHITE">
+      <JFXButton fx:id="backButton" alignment="BASELINE_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#onBackButtonClicked" onMouseEntered="#backButtonMouseEntered" onMouseExited="#backButtonMouseExited" textFill="WHITE">
          <font>
             <Font name="Montserrat Bold" size="18.0" />
          </font>
+         <graphic>
+            <MaterialDesignIconView fx:id="arrow" fill="WHITE" glyphName="KEYBOARD_BACKSPACE" rotate="180.0" size="45">
+               <rotationAxis>
+                  <Point3D y="1.0" />
+               </rotationAxis>
+            </MaterialDesignIconView>
+         </graphic>
       </JFXButton>
    </children>
    <padding>
