@@ -2,8 +2,12 @@ package ecommerceplatform.console;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
+import javax.inject.Inject;
+
+import com.e_commerce_platform.api.CategoryDTO;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDrawer;
 
@@ -18,8 +22,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
+import main.java.ecommerceplatform.console.client.ServerClient;
 
 public class MainWindowController implements Initializable{
+	
+	@Inject
+	private ServerClient client;
 	
 	@FXML
 	private JFXButton closeButton;
@@ -44,6 +52,10 @@ public class MainWindowController implements Initializable{
 	@FXML
 	private StackPane stackPane;
 	
+	@FXML
+    private GridPane menu;
+
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		try {
@@ -51,6 +63,11 @@ public class MainWindowController implements Initializable{
 			loader.setController(new SubcategoryPaneController(this));
 			GridPane content = loader.load();//FXMLLoader.load(getClass().getResource("/SubcategoryPane.fxml"));
 			subcategoryDrower.setSidePane(content);
+			int rowIndex = 9;
+			List<CategoryDTO> categories = client.getMainCategories();
+			categories.stream()
+			.map(CategoryDTO::getName)
+			.forEach(System.out::println);
 			//subcategoryDrower.getSidePane().get(0).toFront();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
