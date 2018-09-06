@@ -291,12 +291,12 @@
                         </GridPane>
                         <ImageView fitHeight="128.0" fitWidth="167.0" pickOnBounds="true" GridPane.rowIndex="1">
                            <image>
-                              <Image url="/bmw-m3.jpg" />
+                              <Image url="main/resources/images/bmw-m3.jpg" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="131.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="/audi-rs7.jpg" />
+                              <Image url="main/resources/images/audi-rs7.jpg" />
                            </image>
                         </ImageView>
                         <GridPane GridPane.columnIndex="1">

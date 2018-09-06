@@ -5,7 +5,7 @@
 	<groupId>ECommercePlatformClient</groupId>
 	<artifactId>ECommercePlatformClient</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
+
 	<properties>
 		<!-- RESTEasy -->
 		<resteasy-jaxrs.version>3.1.4.Final</resteasy-jaxrs.version>
@@ -17,7 +17,7 @@
 		<javax.enterprise.cdi.api.version>2.0</javax.enterprise.cdi.api.version>
 		<javax.ejb-api.version>3.2</javax.ejb-api.version>
 	</properties>
-	
+
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<resources>
@@ -104,15 +104,15 @@
 			<version>2.0.10-9.1.2</version>
 
 		</dependency>
-		
-		
+
+
 		<!-- Internal dependencies -->
 		<dependency>
 			<groupId>ECommercePlatform-Api</groupId>
-  			<artifactId>ECommercePlatform-Api</artifactId>
+			<artifactId>ECommercePlatform-Api</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		
+
 
 		<!-- RESTEasy -->
 		<dependency>
@@ -158,6 +158,14 @@
 			<artifactId>javax.ejb-api</artifactId>
 			<version>${javax.ejb-api.version}</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-client -->
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-client</artifactId>
+			<version>3.1.4.Final</version>
+		</dependency>
+
 
 	</dependencies>
 

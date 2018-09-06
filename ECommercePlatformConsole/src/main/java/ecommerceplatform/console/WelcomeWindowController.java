@@ -69,12 +69,15 @@ public class WelcomeWindowController {
 		
 	}
 	
+	/**
+	 * @param event
+	 */
 	@FXML
 	private void loginButtonClicked(ActionEvent event) {
 		Stage stage = (Stage) logginButton.getScene().getWindow();
 		FXMLLoader loader;
 		
-		loader = new FXMLLoader(getClass().getResource("/MainWindow2.fxml"));
+		loader = new FXMLLoader(getClass().getClassLoader().getResource("main/resources/view/MainWindow2.fxml"));
 		
 		try {
 			Scene scene = new Scene((Pane) loader.load());

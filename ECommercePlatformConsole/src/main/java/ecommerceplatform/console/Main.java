@@ -15,7 +15,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("/LoginWindow2.fxml"));
+			Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("main/resources/view/LoginWindow2.fxml"));
 			Scene scene = new Scene(root,1273,600);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.initStyle(StageStyle.UNDECORATED);

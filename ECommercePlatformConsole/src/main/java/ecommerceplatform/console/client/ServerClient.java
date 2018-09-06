@@ -1,4 +1,4 @@
-package main.java.ecommerceplatform.console.client;
+package ecommerceplatform.console.client;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;

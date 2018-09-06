@@ -22,12 +22,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
-import main.java.ecommerceplatform.console.client.ServerClient;
+import ecommerceplatform.console.client.ServerClient;
 
 public class MainWindowController implements Initializable{
 	
-	@Inject
-	private ServerClient client;
 	
 	@FXML
 	private JFXButton closeButton;
@@ -59,16 +57,17 @@ public class MainWindowController implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/SubcategoryPane.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("main/resources/view/SubcategoryPane.fxml"));
 			loader.setController(new SubcategoryPaneController(this));
 			GridPane content = loader.load();//FXMLLoader.load(getClass().getResource("/SubcategoryPane.fxml"));
 			subcategoryDrower.setSidePane(content);
+			ServerClient client = new ServerClient();
 			int rowIndex = 9;
 			List<CategoryDTO> categories = client.getMainCategories();
 			categories.stream()
 			.map(CategoryDTO::getName)
 			.forEach(System.out::println);
-			//subcategoryDrower.getSidePane().get(0).toFront();
+			subcategoryDrower.getSidePane().get(0).toFront();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
