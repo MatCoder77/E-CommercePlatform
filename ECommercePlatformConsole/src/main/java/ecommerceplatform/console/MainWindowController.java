@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 import javax.inject.Inject;
 
@@ -56,23 +57,17 @@ public class MainWindowController implements Initializable{
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("main/resources/view/SubcategoryPane.fxml"));
-			loader.setController(new SubcategoryPaneController(this));
-			GridPane content = loader.load();//FXMLLoader.load(getClass().getResource("/SubcategoryPane.fxml"));
-			subcategoryDrower.setSidePane(content);
-			ServerClient client = new ServerClient();
-			int rowIndex = 9;
-			List<CategoryDTO> categories = client.getMainCategories();
-			categories.stream()
-			.map(CategoryDTO::getName)
-			.forEach(System.out::println);
-			subcategoryDrower.getSidePane().get(0).toFront();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+		/*FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("main/resources/view/SubcategoryPane.fxml"));
+		loader.setController(new SubcategoryPaneController(this));
+		GridPane content = loader.load();//FXMLLoader.load(getClass().getResource("/SubcategoryPane.fxml"));*/
+		ServerClient client = new ServerClient();
+		List<CategoryDTO> categories = client.getMainCategories();
+		List<String> subcategories = categories.stream()
+				.map(CategoryDTO::getName)
+				.collect(Collectors.toList());
+		SubcategoryPane subcategoryPane = new SubcategoryPane(this, subcategories);
+		subcategoryDrower.setSidePane(subcategoryPane);
+		subcategoryDrower.getSidePane().get(0).toFront();	
 	}
 	@FXML
     void buttonClicked(ActionEvent event) {

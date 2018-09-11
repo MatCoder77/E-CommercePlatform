@@ -1,0 +1,17 @@
+
+
+.jfx-button:hover {
+	-fx-background-color: "#909fd1";
+}
+
+.subcategory-pane > .jfx-button {
+	-fx-max-width: Infinity;
+	-fx-max-height: Infinity;
+	-fx-text-fill: white;
+	-fx-font-family: "Montserrat";
+	-fx-font-size: 18;
+	-fx-alignment: "baseline-left";
+}
+/* .text {
+	-fx-font-family: "Roboto";
+}*/
