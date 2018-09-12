@@ -4,18 +4,26 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import javax.inject.Inject;
+
 import com.e_commerce_platform.api.CategoryDTO;
 import com.e_commerce_platform.api.CategoryDTO.CategoryDTOBuilder;
+import com.e_commerce_platform.domain.category.control.CategoryRepository;
 import com.e_commerce_platform.domain.category.entity.CategoryEntity;
 import com.e_commerce_platform.domain.category.entity.CategoryEntity.CategoryEntityBuilder;
 
+import javafx.scene.Parent;
+
 public class CategoryMapper {
+	
+	@Inject
+	private CategoryRepository repostiory;
 	
 	public CategoryEntity mapToEntity(CategoryDTO categoryDTO) {
 		return CategoryEntity.builder()
 				.withId(categoryDTO.getId())
 				.withName(categoryDTO.getName())
-				.withParent(mapToEntity(categoryDTO.getParentCategory()))
+				.withParent(repostiory.getCategoryById(categoryDTO.getParentCategory()))
 				.withSubcategories(mapToEntity(categoryDTO.getSubcategories()))
 				.build();			
 	}
@@ -29,7 +37,7 @@ public class CategoryMapper {
 	public CategoryDTO mapToDTO(CategoryEntity categoryEntity) {
 		CategoryDTOBuilder builder = CategoryDTO.builder();
 		categoryEntity.getParentCategory()
-				.ifPresent((parent) -> builder.withParentCategory(mapToDTO(parent)));
+				.ifPresent(CategoryEntity::getId);
 		return builder
 				.withId(categoryEntity.getId())
 				.withName(categoryEntity.getName())

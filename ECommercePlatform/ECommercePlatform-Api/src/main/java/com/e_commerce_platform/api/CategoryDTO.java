@@ -5,7 +5,7 @@ import java.util.Set;
 public class CategoryDTO {
 	
 	private int id;
-	private CategoryDTO parentCategory;
+	private int parentCategoryId;
 	private String name;
 	private Set<CategoryDTO> subcategories;
 	
@@ -13,7 +13,7 @@ public class CategoryDTO {
 	
 	private CategoryDTO(CategoryDTOBuilder builder) {
 		id = builder.id;
-		parentCategory = builder.parentCategory;
+		parentCategoryId = builder.parentCategoryId;
 		name = builder.name;
 		subcategories = builder.subcategories;
 	}
@@ -22,8 +22,8 @@ public class CategoryDTO {
 		return id;
 	}
 	
-	public CategoryDTO getParentCategory() {
-		return parentCategory;
+	public int getParentCategory() {
+		return parentCategoryId;
 	}
 	
 	public String getName() {
@@ -41,7 +41,7 @@ public class CategoryDTO {
 	public static class CategoryDTOBuilder {
 		
 		private int id;
-		private CategoryDTO parentCategory;
+		private int parentCategoryId;
 		private String name;
 		private Set<CategoryDTO> subcategories;
 		
@@ -50,8 +50,8 @@ public class CategoryDTO {
 			return this;
 		}
 		
-		public CategoryDTOBuilder withParentCategory(CategoryDTO parentCategory) {
-			this.parentCategory = parentCategory;
+		public CategoryDTOBuilder withParentCategory(int parentCategoryId) {
+			this.parentCategoryId = parentCategoryId;
 			return this;
 		}
 		

@@ -25,4 +25,8 @@ public class CategoryRepository {
 		criteriaQuery.where(isMainCategoryConditon);
 		return entityManager.createQuery(criteriaQuery).getResultList();
 	}
+	
+	public CategoryEntity getCategoryById(int id) {
+		return entityManager.find(CategoryEntity.class, id);
+	}
 }
