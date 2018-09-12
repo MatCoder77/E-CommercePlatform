@@ -37,7 +37,7 @@ public class CategoryMapper {
 	public CategoryDTO mapToDTO(CategoryEntity categoryEntity) {
 		CategoryDTOBuilder builder = CategoryDTO.builder();
 		categoryEntity.getParentCategory()
-				.ifPresent(CategoryEntity::getId);
+				.ifPresent(parent -> builder.withParentCategory(parent.getId()));
 		return builder
 				.withId(categoryEntity.getId())
 				.withName(categoryEntity.getName())
