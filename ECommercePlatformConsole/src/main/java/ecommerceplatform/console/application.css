@@ -12,6 +12,24 @@
 	-fx-font-size: 18;
 	-fx-alignment: "baseline-left";
 }
+
+.main-menu > .jfx-button {
+	-fx-max-width: Infinity;
+	-fx-max-height: Infinity;
+	-fx-text-fill: white;
+	-fx-font-family: "Montserrat";
+	-fx-font-size: 21.5;
+	-fx-alignment: "baseline-left";
+}
+
+.main-menu > .home-button {
+	-fx-font-family: "Montserrat SemiBold";
+}
+.main-menu > .glyph-icon{
+    -fx-text-fill: -icons-color;
+    -fx-fill: white;
+    -glyph-size: 36px;
+}
 /* .text {
 	-fx-font-family: "Roboto";
 }*/
