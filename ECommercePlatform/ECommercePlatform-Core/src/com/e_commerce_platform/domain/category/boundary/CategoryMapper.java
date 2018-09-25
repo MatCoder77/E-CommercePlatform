@@ -23,8 +23,9 @@ public class CategoryMapper {
 		return CategoryEntity.builder()
 				.withId(categoryDTO.getId())
 				.withName(categoryDTO.getName())
-				.withParent(repostiory.getCategoryById(categoryDTO.getParentCategory()))
+				.withParent(repostiory.getCategoryById(categoryDTO.getParentCategoryId()))
 				.withSubcategories(mapToEntity(categoryDTO.getSubcategories()))
+				.withIconName(categoryDTO.getIconName())
 				.build();			
 	}
 	
@@ -42,6 +43,7 @@ public class CategoryMapper {
 				.withId(categoryEntity.getId())
 				.withName(categoryEntity.getName())
 				.withSubcategories(mapToDTO(categoryEntity.getSubcategories()))
+				.withIconName(categoryEntity.getIconName())
 				.build();
 	}
 	

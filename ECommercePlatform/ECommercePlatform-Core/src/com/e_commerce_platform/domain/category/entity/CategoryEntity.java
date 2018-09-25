@@ -23,6 +23,7 @@ public class CategoryEntity {
 	private CategoryEntity parentCategory;
 	@OneToMany
 	private Set<CategoryEntity> subcategories;
+	private String iconName;
 	
 	CategoryEntity() {}
 	
@@ -32,6 +33,7 @@ public class CategoryEntity {
 		parentCategory = builder.parentCategory;
 		subcategories = builder.subcategories;
 		subcategories.forEach(this::registerParentCategory);
+		iconName = builder.iconName;
 	}
 	
 	private void registerParentCategory (CategoryEntity subcategory) {
@@ -58,6 +60,10 @@ public class CategoryEntity {
 		return Collections.unmodifiableSet(subcategories);
 	}
 	
+	public String getIconName() {
+		return iconName;
+	}
+	
 	public static CategoryEntityBuilder builder() {
 		return new CategoryEntityBuilder();
 	}
@@ -67,6 +73,7 @@ public class CategoryEntity {
 		private String name;
 		private CategoryEntity parentCategory;
 		private Set<CategoryEntity> subcategories;
+		private String iconName;
 		
 		public CategoryEntityBuilder withId(int id) {
 			this.id = id;
@@ -85,6 +92,11 @@ public class CategoryEntity {
 		
 		public CategoryEntityBuilder withSubcategories(Set<CategoryEntity> subcategories) {
 			this.subcategories = subcategories;
+			return this;
+		}
+		
+		public CategoryEntityBuilder withIconName(String iconName) {
+			this.iconName = iconName;
 			return this;
 		}
 		

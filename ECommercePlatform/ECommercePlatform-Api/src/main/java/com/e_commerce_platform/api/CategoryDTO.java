@@ -5,9 +5,10 @@ import java.util.Set;
 public class CategoryDTO {
 	
 	private int id;
-	private int parentCategoryId;
+	private Integer parentCategoryId;
 	private String name;
 	private Set<CategoryDTO> subcategories;
+	private String iconName;
 	
 	private CategoryDTO() {}
 	
@@ -16,13 +17,14 @@ public class CategoryDTO {
 		parentCategoryId = builder.parentCategoryId;
 		name = builder.name;
 		subcategories = builder.subcategories;
+		iconName = builder.iconName;
 	}
 	
 	public int getId() {
 		return id;
 	}
 	
-	public int getParentCategory() {
+	public Integer getParentCategoryId() {
 		return parentCategoryId;
 	}
 	
@@ -34,6 +36,10 @@ public class CategoryDTO {
 		return subcategories;
 	}
 	
+	public String getIconName() {
+		return iconName;
+	}
+	
 	public static CategoryDTOBuilder builder() {
 		return new CategoryDTOBuilder();
 	}
@@ -41,16 +47,17 @@ public class CategoryDTO {
 	public static class CategoryDTOBuilder {
 		
 		private int id;
-		private int parentCategoryId;
+		private Integer parentCategoryId;
 		private String name;
 		private Set<CategoryDTO> subcategories;
+		private String iconName;
 		
 		public CategoryDTOBuilder withId(int id) {
 			this.id = id;
 			return this;
 		}
 		
-		public CategoryDTOBuilder withParentCategory(int parentCategoryId) {
+		public CategoryDTOBuilder withParentCategory(Integer parentCategoryId) {
 			this.parentCategoryId = parentCategoryId;
 			return this;
 		}
@@ -62,6 +69,11 @@ public class CategoryDTO {
 		
 		public CategoryDTOBuilder withSubcategories(Set<CategoryDTO> subcategories) {
 			this.subcategories = subcategories;
+			return this;
+		}
+		
+		public CategoryDTOBuilder withIconName(String iconName) {
+			this.iconName = iconName;
 			return this;
 		}
 		
